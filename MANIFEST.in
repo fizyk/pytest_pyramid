@@ -1,0 +1,4 @@
+include *.rst *.py
+recursive-include pytest_pyramid *.py
+recursive-include docs *
+prune docs/build

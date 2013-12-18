@@ -1,0 +1,12 @@
+language: python
+python:
+    - "2.7"
+    - "3.2"
+    - "3.3"
+install:
+    - "python setup.py install"
+    - "pip install pytest_pyramid[tests] coveralls --use-mirrors"
+script:
+    - "py.test"
+after_success:
+    - coveralls
