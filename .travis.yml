@@ -8,5 +8,5 @@ install:
     - "pip install pytest_pyramid[tests] coveralls --use-mirrors"
 script:
     - "py.test --pc tests/pyramid.test.ini --cov pytest_pyramid tests/"
-# after_success:
-    # - coveralls
+after_success:
+    - coveralls
