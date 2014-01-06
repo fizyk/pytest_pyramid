@@ -23,7 +23,8 @@ tests_require = [
 ]
 
 extras_require = {
-    'docs': ['sphinx']
+    'docs': ['sphinx'],
+    'tests': tests_require
 }
 
 setup(
