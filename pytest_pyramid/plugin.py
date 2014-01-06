@@ -1,5 +1,10 @@
 import pytest
-from pytest_pyramid.compat import configparser
+from pyramid.config import Configurator
+from webtest import TestApp
+try:
+    from ConfigParser import ConfigParser
+except ImportError:  # py3
+    from configparser import ConfigParser
 
 
 def pytest_addoption(parser):
@@ -12,14 +17,26 @@ def pytest_addoption(parser):
     )
 
 
+class App(object):
+
+    def __init__(self, app, config):
+        self.app = app
+        self.config = config
+
+
 @pytest.fixture
 def pyramid_app(request):
     config_file = request.config.getvalue('pyramid_config')
-    # TODO
-    # 1. Read man section of config file
-    # 2. Get the settings dict
-    # 3. Get the app setting and discover main entrypoint
-    # 4. Run it as main include
+    config = ConfigParser()
+    config.read(config_file)
+    settings = {}
+    for option, value in config.items('app:main'):
+        settings[option] = value
+
+    config = Configurator(settings=settings)
+    app = TestApp(config.make_wsgi_app())
+
+    return App(app, config)
 
 
 # 5. make it also a factory

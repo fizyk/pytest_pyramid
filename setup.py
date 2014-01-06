@@ -14,7 +14,8 @@ def read(fname):
 
 requirements = [
     'pytest',
-    'pyramid'
+    'pyramid',
+    'webtest'
 ]
 
 extras_require = {
