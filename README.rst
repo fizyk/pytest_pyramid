@@ -30,4 +30,4 @@ Tests
 
 To run tests run this command:
 
-`py.test -s --pc tests/pyramid.test.ini`
+`py.test --pc tests/pyramid.test.ini`

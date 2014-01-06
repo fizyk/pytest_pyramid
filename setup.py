@@ -18,6 +18,10 @@ requirements = [
     'webtest'
 ]
 
+tests_require = [
+    'pytest-cov'
+]
+
 extras_require = {
     'docs': ['sphinx']
 }
@@ -53,6 +57,7 @@ setup(
     ],
     packages=find_packages(),
     install_requires=requirements,
+    tests_require=tests_require,
     test_suite='tests',
     entry_points={
         'pytest11': [
