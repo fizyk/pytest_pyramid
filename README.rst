@@ -9,12 +9,23 @@ pytest_pyramid
     :target: https://coveralls.io/r/fizyk/pytest_pyramid?branch=master
     :alt: Coverage Status
 
+.. image:: https://requires.io/github/fizyk/pytest_pyramid/requirements.png?branch=master
+   :target: https://requires.io/github/fizyk/pytest_pyramid/requirements/?branch=master
+   :alt: Requirements Status
+
 pytest_pyramid provides basic fixtures for testing pyramid applications with pytest test suite
 
-TODO
-====
+By default, pytest_pyramid will create two fixtures: pyramid_config, which creates configurator based on config.ini file, and pyramid_app, which creates TestApp based on Configurator returned by pyramid_config.
 
-There's a simple TODO list, providing goals to achieve before releasing this code to PyPI
+Command line options
+--------------------
+
+* **--pc** - pyramid configuration file based on which pytest_pyramid will create test app
+
+TODO
+----
+
+Before initial release
 
 #. documentation
 
@@ -24,7 +35,7 @@ This goal should make it in to 1.0 major release.
 
 
 Tests
-=====
+-----
 
 To run tests run this command:
 
