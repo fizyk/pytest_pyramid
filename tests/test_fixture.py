@@ -30,6 +30,9 @@ def test_pyramid_config(pyramid_config, pyramid_config_path):
 
 
 def test_pyramid_config_settings(pyramid_config_settings):
+    '''
+    Test checking creating Configurator based on settings
+    '''
     assert isinstance(pyramid_config_settings, Configurator)
     assert 'env' in pyramid_config_settings.registry.settings
     assert pyramid_config_settings.registry.settings['env'] == 'pytest'

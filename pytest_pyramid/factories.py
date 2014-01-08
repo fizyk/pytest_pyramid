@@ -1,6 +1,5 @@
 import pytest
-
-
+from webtest import TestApp
 from pyramid.config import Configurator
 try:
     from ConfigParser import ConfigParser
@@ -27,3 +26,15 @@ def pyramid_config(settings=None, config_path=None):
         return Configurator(settings=app_settings)
 
     return pyramid_config
+
+
+def pyramid_app(config_fixture_name):
+    @pytest.fixture
+    def pyramid_app(request):
+        config = request.getfuncargvalue(config_fixture_name)
+
+        app = TestApp(config.make_wsgi_app())
+
+        return app
+
+    return pyramid_app

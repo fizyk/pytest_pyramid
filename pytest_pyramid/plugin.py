@@ -1,7 +1,3 @@
-import pytest
-from webtest import TestApp
-
-
 from pytest_pyramid import factories
 
 
@@ -15,15 +11,9 @@ def pytest_addoption(parser):
     )
 
 
+# fixtures (made out of factories)
 pyramid_config = factories.pyramid_config()
-
-
-@pytest.fixture
-def pyramid_app(pyramid_config):
-
-    app = TestApp(pyramid_config.make_wsgi_app())
-
-    return app
+pyramid_app = factories.pyramid_app('pyramid_config')
 
 
 # 5. make it also a factory
