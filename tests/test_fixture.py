@@ -8,11 +8,11 @@ def test_pyramid_app(pyramid_app):
     Simple test to make sure we have everything needed for pyramid integration tests running
     '''
 
-    app = pyramid_app.app
-    config = pyramid_app.config
+    assert isinstance(pyramid_app, TestApp)
 
-    assert isinstance(app, TestApp)
-    assert isinstance(config, Configurator)
-
-    res = pyramid_app.app.get('/', status=404)
+    res = pyramid_app.get('/', status=404)
     assert res.status_code == 404
+
+
+def test_pyramid_config(pyramid_config):
+    assert isinstance(pyramid_config, Configurator)

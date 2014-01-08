@@ -17,15 +17,8 @@ def pytest_addoption(parser):
     )
 
 
-class App(object):
-
-    def __init__(self, app, config):
-        self.app = app
-        self.config = config
-
-
 @pytest.fixture
-def pyramid_app(request):
+def pyramid_config(request):
     config_file = request.config.getvalue('pyramid_config')
     config = ConfigParser()
     config.read(config_file)
@@ -34,9 +27,15 @@ def pyramid_app(request):
         settings[option] = value
 
     config = Configurator(settings=settings)
-    app = TestApp(config.make_wsgi_app())
+    return config
 
-    return App(app, config)
+
+@pytest.fixture
+def pyramid_app(pyramid_config):
+
+    app = TestApp(pyramid_config.make_wsgi_app())
+
+    return app
 
 
 # 5. make it also a factory
