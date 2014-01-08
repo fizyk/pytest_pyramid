@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2013 by pytest_pyramid authors and contributors <see AUTHORS file>
+#
+# This module is part of pytest_pyramid and is released under
+# the MIT License (MIT): http://opensource.org/licenses/MIT
+
 from pytest_pyramid import factories
 
 
@@ -14,7 +21,3 @@ def pytest_addoption(parser):
 # fixtures (made out of factories)
 pyramid_config = factories.pyramid_config()
 pyramid_app = factories.pyramid_app('pyramid_config')
-
-
-# 5. make it also a factory
-# 6. accept config file or settings dict.
