@@ -1,10 +1,8 @@
 import pytest
-from pyramid.config import Configurator
 from webtest import TestApp
-try:
-    from ConfigParser import ConfigParser
-except ImportError:  # py3
-    from configparser import ConfigParser
+
+
+from pytest_pyramid import factories
 
 
 def pytest_addoption(parser):
@@ -17,17 +15,7 @@ def pytest_addoption(parser):
     )
 
 
-@pytest.fixture
-def pyramid_config(request):
-    config_file = request.config.getvalue('pyramid_config')
-    config = ConfigParser()
-    config.read(config_file)
-    settings = {}
-    for option, value in config.items('app:main'):
-        settings[option] = value
-
-    config = Configurator(settings=settings)
-    return config
+pyramid_config = factories.pyramid_config()
 
 
 @pytest.fixture
