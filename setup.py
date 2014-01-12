@@ -43,7 +43,7 @@ setup(
     url='https://github.com/fizyk/pytest_pyramid',
     license="MIT License",
     classifiers=[
-        'Development Status :: 1 - Planning',
+        'Development Status :: 4 - Beta',
         'Environment :: Plugins',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
