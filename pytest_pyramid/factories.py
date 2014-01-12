@@ -15,6 +15,17 @@ except ImportError:  # py3
 
 
 def pyramid_config(settings=None, config_path=None):
+    '''
+    A pyramid_config fixture factory, used to create aditional fixtures returning pyramid's :class:`~pyramid.config.Configurator` object
+
+    :param dict settings: optional parameter delivering
+        settings for building a Configurator object.
+    :param str config_path: optional parameter delivering path to pyramid configuration file
+
+    :returns: configuration
+    :rtype: `pyramid.config.Configurator`
+
+    '''
 
     @pytest.fixture
     def pyramid_config(request):
@@ -36,6 +47,17 @@ def pyramid_config(settings=None, config_path=None):
 
 
 def pyramid_app(config_fixture_name):
+    '''
+    Pyramid_app fixture factory. Creates a TestApp instance based on
+
+    :param str config_fixture_name: name of a fixture creating
+        :class:`pyramid.config.Configurator`
+
+    :returns: TestApp based on pyramid's COnfigurator object as returned from
+        fixture passed by  **config_fixture_name**
+    :rtype: webtest.app.TestApp
+    '''
+
     @pytest.fixture
     def pyramid_app(request):
         config = request.getfuncargvalue(config_fixture_name)

@@ -13,7 +13,7 @@ pytest_pyramid
    :target: https://requires.io/github/fizyk/pytest_pyramid/requirements/?branch=master
    :alt: Requirements Status
 
-pytest_pyramid provides basic fixtures for testing pyramid applications with pytest test suite
+pytest_pyramid provides basic fixtures for testing pyramid applications with pytest test suite.
 
 By default, pytest_pyramid will create two fixtures: pyramid_config, which creates configurator based on config.ini file, and pyramid_app, which creates TestApp based on Configurator returned by pyramid_config.
 
