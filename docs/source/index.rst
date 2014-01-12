@@ -10,8 +10,13 @@ pytest_pyramid provides basic fixtures for testing pyramid applications with pyt
 
    usage
    api
+   changelog
+   authors
 
-Usage
------
+License
+-------
 
-For the most basic use, pytest_pyramid creates
+Copyright (c) 2014 by pytest_pyramid authors and contributors. See :ref:`authors`
+
+This module is part of pytest_pyramid and is released under
+the MIT License (MIT): http://opensource.org/licenses/MIT
