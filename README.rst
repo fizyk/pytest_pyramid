@@ -22,12 +22,13 @@ Command line options
 
 * **--pc** - pyramid configuration file based on which pytest_pyramid will create test app
 
+Documentation
+-------------
+
+http://pytest-pyramid.readthedocs.org/en/latest/
+
 TODO
 ----
-
-Before initial release
-
-#. documentation
 
 This goal should make it in to 1.0 major release.
 
