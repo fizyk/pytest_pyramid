@@ -30,9 +30,9 @@ def pyramid_config(settings=None, config_path=None):
     @pytest.fixture
     def pyramid_config(request):
         app_settings = settings
-        if not app_settings:
+        if app_settings is None:
             config_parser = ConfigParser()
-            if not config_path:
+            if config_path is None:
                 config_file = request.config.getvalue('pyramid_config')
                 config_parser.read(config_file)
             else:
