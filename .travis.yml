@@ -10,3 +10,13 @@ script:
     - "py.test --pc tests/pyramid.test.ini --cov pytest_pyramid tests/"
 after_success:
     - coveralls
+
+deploy:
+    provider: pypi
+    user: fizyk
+    password:
+        secure: AeTVshEncgd/rpqmTNeRYhTOgI4Pgw7h0lMMoqx+6xvAcpJKBi6TRqTSJ5J4zncVbMIXnDhmJl+Ftz4eFwNxkgR2D8IMUZZ2XlzU2FMvDPVQc+xNxJ6r9+xJfv6ROLWFSYiEeE+ELHb+WjcvRk9wBbiUr2TYzlI2nZipuXd9Hs0=
+    on:
+        tags: true
+        repo: fizyk/pytest_pyramid
+    distributions: "sdist bdist bdist_wheel"
