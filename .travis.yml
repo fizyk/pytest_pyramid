@@ -11,6 +11,7 @@ install:
     - "pip install wheel --use-mirrors"
 script:
     - "py.test --pc tests/pyramid.test.ini --cov pytest_pyramid tests/"
+    - "pylama"
 after_success:
     - coveralls
 
