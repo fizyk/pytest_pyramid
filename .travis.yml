@@ -10,7 +10,7 @@ install:
     # manually install wheel for deployment
     - "pip install wheel --use-mirrors"
 script:
-    - "py.test --pc tests/pyramid.test.ini --cov pytest_pyramid tests/"
+    - "py.test --pc tests/pyramid.test.ini --cov pytest_pyramid tests/ -p no:pytest_pyramid"
     - "pylama"
 after_success:
     - coveralls
