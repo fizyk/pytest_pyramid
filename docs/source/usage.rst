@@ -29,8 +29,8 @@ you with fixture :mod:`~pytest_pyramid.factories`.
 
 There are two factories:
 
-* :meth:`~pytest_pyramid.factories.pyramid_config` provides you with Configuration object based on either settings, config_file argument or by --pc command line option config file.
-* :meth:`~pytest_pyramid.factories.pyramid_app` creates a :class:`~webtest.app.TestApp` based on Configurator class instance as returned from fixture passed by name to it.
+* :func:`~pytest_pyramid.factories.pyramid_config` provides you with Configuration object based on either settings, config_file argument or by --pc command line option config file.
+* :func:`~pytest_pyramid.factories.pyramid_app` creates a :class:`~webtest.app.TestApp` based on Configurator class instance as returned from fixture passed by name to it.
 
 
 
