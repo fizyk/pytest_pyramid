@@ -5,6 +5,7 @@
 # the MIT License (MIT): http://opensource.org/licenses/MIT
 """Pytest's fixture factories."""
 
+import os
 import pytest
 from webtest import TestApp
 from pyramid.config import Configurator
@@ -29,19 +30,28 @@ def pyramid_config(settings=None, config_path=None):
     :returns: configuration
     :rtype: `pyramid.config.Configurator`
     """
+
     @pytest.fixture
     def pyramid_config(request):
         app_settings = settings
         if app_settings is None:
-            config_parser = ConfigParser()
-            if config_path is None:
-                config_file = request.config.getvalue('pyramid_config')
-                config_parser.read(config_file)
-            else:
-                config_parser.read(config_path)
+
+            def load_settings(cpath, io_settings):
+                config_parser = ConfigParser()
+                config_parser.read(cpath)
+
+                use = config_parser.get('app:main', 'use')
+                if use and use.startswith('config:'):
+                    sub_path = os.path.join(os.path.dirname(cpath), use.replace('config:', '').strip())
+                    load_settings(os.path.abspath(sub_path), io_settings)
+
+                for option, value in config_parser.items('app:main'):
+                    io_settings[option] = value
+
+            # load the application settings
             app_settings = {}
-            for option, value in config_parser.items('app:main'):
-                app_settings[option] = value
+            cpath = config_path or request.config.getvalue('pyramid_config')
+            load_settings(cpath, app_settings)
 
         return Configurator(settings=app_settings)
 
