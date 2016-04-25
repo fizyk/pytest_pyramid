@@ -30,7 +30,6 @@ def pyramid_config(settings=None, config_path=None):
     :returns: configuration
     :rtype: `pyramid.config.Configurator`
     """
-
     @pytest.fixture
     def pyramid_config(request):
         app_settings = settings
@@ -42,7 +41,9 @@ def pyramid_config(settings=None, config_path=None):
 
                 use = config_parser.get('app:main', 'use')
                 if use and use.startswith('config:'):
-                    sub_path = os.path.join(os.path.dirname(cpath), use.replace('config:', '').strip())
+                    base = os.path.dirname(cpath)
+                    filename = use.replace('config:', '').strip()
+                    sub_path = os.path.join(base, filename)
                     load_settings(os.path.abspath(sub_path), io_settings)
 
                 for option, value in config_parser.items('app:main'):
