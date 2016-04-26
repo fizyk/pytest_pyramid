@@ -5,8 +5,9 @@ python:
     - "3.3"
     - "3.4"
 install:
+    - "pip install -r requirements-tests.txt"
     - "python setup.py develop"
-    - "pip install pytest_pyramid[tests] coveralls pylama"
+    - "pip install pytest_pyramid[tests] coveralls"
     # manually install wheel for deployment
     - "pip install wheel --use-mirrors"
 script:
