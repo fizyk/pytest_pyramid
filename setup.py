@@ -35,9 +35,7 @@ setup(
     description='pytest pyramid providing basic fixtures for testing ' +
     'pyramid applications with pytest test suite',
     long_description=(
-        read('README.rst')
-        + '\n\n' +
-        read('CHANGES.rst')
+        read('README.rst') + '\n\n' + read('CHANGES.rst')
     ),
     keywords='pyramid pytest testing',
     author='Grzegorz Sliwinski',
