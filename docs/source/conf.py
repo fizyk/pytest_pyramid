@@ -302,6 +302,6 @@ autoclass_content = 'both'
 # Intersphinx configuration
 intersphinx_mapping = {
     'python': ('http://docs.python.org/', None),
-    'webtest': ('https://webtest.readthedocs.org/en/latest/', None),
+    'webtest': ('https://webtest.readthedocs.io/en/latest/', None),
     'pyramid': ('http://docs.pylonsproject.org/projects/pyramid/en/1.5-branch/', None),
 }
