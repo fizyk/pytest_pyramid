@@ -4,6 +4,8 @@ CHANGES
 unreleased
 ----------
 
+- [feature] support pyramid's config inheritance with use = config:other.file.ini - Thanks Eric Hulser
+
 0.1.1
 -----
 - make factories condition to check parameters against None
