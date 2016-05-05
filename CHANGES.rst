@@ -5,6 +5,7 @@ unreleased
 ----------
 
 - [feature] support pyramid's config inheritance with use = config:other.file.ini - Thanks Eric Hulser
+- [feature] dropped support for python 3.2, added support for python 3.4 and 3.5
 
 0.1.1
 -----
