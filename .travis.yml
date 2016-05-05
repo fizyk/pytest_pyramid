@@ -24,4 +24,4 @@ deploy:
     on:
         tags: true
         repo: fizyk/pytest_pyramid
-    distributions: "sdist bdist_egg bdist_wheel"
+    distributions: "sdist bdist_wheel"
