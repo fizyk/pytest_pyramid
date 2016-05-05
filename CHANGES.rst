@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-unreleased
+0.2.0
 ----------
 
 - [feature] support pyramid's config inheritance with use = config:other.file.ini - Thanks Eric Hulser
