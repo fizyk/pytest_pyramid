@@ -1,8 +1,6 @@
 pytest_pyramid
 ==============
 
-====
-
 .. image:: https://img.shields.io/pypi/v/pytest_pyramid.svg
     :target: https://pypi.python.org/pypi/pytest_pyramid/
     :alt: Latest PyPI version
