@@ -1,13 +1,13 @@
 # package main requirements
-pyramid==1.6.1
-pytest==2.9.1
+pyramid==1.7
+pytest==2.9.2
 webtest==2.0.21
 # test requirements
 pytest-cov==2.2.1
-coverage==4.0.3
+coverage==4.1
 # linters
 pylama==7.0.9
-pyflakes==1.2.0
+pyflakes==1.2.3
 pep8==1.7.0
 pep257==0.7.0
-mccabe==0.4.0
+mccabe==0.5.0
