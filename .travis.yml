@@ -7,9 +7,7 @@ python:
 install:
     - "pip install -r requirements-tests.txt"
     - "python setup.py develop"
-    - "pip install pytest_pyramid[tests] coveralls"
-    # manually install wheel for deployment
-    - "pip install wheel --use-mirrors"
+    - "pip install pytest_pyramid[tests] coveralls wheel"
 script:
     - "py.test --pc tests/pyramid.test.ini --cov pytest_pyramid tests/ -p no:pytest_pyramid"
     - "pylama"
