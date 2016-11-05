@@ -1,18 +1,15 @@
 """pytest_pyramid's installation file."""
 
 import os
-import re
 from setuptools import setup, find_packages
 
 here = os.path.dirname(__file__)
-with open(os.path.join(here, 'pytest_pyramid', '__init__.py')) as v_file:
-    package_version = re.compile(
-        r".*__version__ = '(.*?)'", re.S).match(v_file.read()).group(1)
 
 
 def read(fname):
     """Read file into string."""
     return open(os.path.join(here, fname)).read()
+
 
 requirements = [
     'pytest',
@@ -31,7 +28,7 @@ extras_require = {
 
 setup(
     name='pytest_pyramid',
-    version=package_version,
+    version='0.2.0',
     description='pytest pyramid providing basic fixtures for testing ' +
     'pyramid applications with pytest test suite',
     long_description=(
