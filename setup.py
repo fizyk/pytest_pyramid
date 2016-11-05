@@ -14,6 +14,7 @@ def read(fname):
     """Read file into string."""
     return open(os.path.join(here, fname)).read()
 
+
 requirements = [
     'pytest',
     'pyramid',
