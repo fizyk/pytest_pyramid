@@ -30,7 +30,7 @@ def pyramid_config(settings=None, config_path=None):
     :returns: configuration
     :rtype: `pyramid.config.Configurator`
     """
-    @pytest.fixture
+    @pytest.fixture(scope='session')
     def pyramid_config(request):
         app_settings = settings
         if app_settings is None:
