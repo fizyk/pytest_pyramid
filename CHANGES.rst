@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-unreleased
+0.3.0
 ----------
 
 - [feature] changed pyramid_config fixture scope to session.

@@ -5,8 +5,8 @@ pytest_pyramid
     :target: https://pypi.python.org/pypi/pytest_pyramid/
     :alt: Latest PyPI version
 
-.. image:: https://readthedocs.io/projects/pytest_pyramid/badge/?version=v0.2.0
-    :target: http://pytest_pyramid.readthedocs.io/en/v0.2.0/
+.. image:: https://readthedocs.io/projects/pytest_pyramid/badge/?version=v0.3.0
+    :target: http://pytest_pyramid.readthedocs.io/en/v0.3.0/
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/pypi/wheel/pytest_pyramid.svg
@@ -24,16 +24,16 @@ pytest_pyramid
 Package status
 --------------
 
-.. image:: https://travis-ci.org/fizyk/pytest_pyramid.svg?branch=v0.2.0
+.. image:: https://travis-ci.org/fizyk/pytest_pyramid.svg?branch=v0.3.0
     :target: https://travis-ci.org/fizyk/pytest_pyramid
     :alt: Tests
 
-.. image:: https://coveralls.io/repos/fizyk/pytest_pyramid/badge.png?branch=v0.2.0
-    :target: https://coveralls.io/r/fizyk/pytest_pyramid?branch=v0.2.0
+.. image:: https://coveralls.io/repos/fizyk/pytest_pyramid/badge.png?branch=v0.3.0
+    :target: https://coveralls.io/r/fizyk/pytest_pyramid?branch=v0.3.0
     :alt: Coverage Status
 
-.. image:: https://requires.io/github/fizyk/pytest_pyramid/requirements.svg?tag=v0.2.0
-     :target: https://requires.io/github/fizyk/pytest_pyramid/requirements/?tag=v0.2.0
+.. image:: https://requires.io/github/fizyk/pytest_pyramid/requirements.svg?tag=v0.3.0
+     :target: https://requires.io/github/fizyk/pytest_pyramid/requirements/?tag=v0.3.0
      :alt: Requirements Status
 
 pytest_pyramid provides basic fixtures for testing pyramid applications with pytest test suite.
