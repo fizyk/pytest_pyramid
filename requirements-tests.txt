@@ -3,7 +3,7 @@ pyramid==1.8.3
 pytest==3.0.7
 webtest==2.0.27
 # test requirements
-pytest-cov==2.4.0
+pytest-cov==2.5.0
 coverage==4.4
 # linters
 pylama==7.3.3
