@@ -6,6 +6,10 @@ python:
     - "3.4"
     - "3.5"
     - "3.6"
+# blocklist branches
+branches:
+  except:
+  - requires-io-master
 install:
     - "pip install -r requirements-tests.txt"
     - "python setup.py develop"
