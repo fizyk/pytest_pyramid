@@ -3,6 +3,6 @@ from pyramid.config import Configurator
 
 
 def main(global_config, **settings):
-    """Dummy app configurator."""
+    """App configurator."""
     config = Configurator(settings)
     return config
