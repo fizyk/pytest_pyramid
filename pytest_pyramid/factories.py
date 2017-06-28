@@ -17,7 +17,7 @@ except ImportError:  # py3
 
 def pyramid_config(settings=None, config_path=None):
     """
-    A pyramid_config fixture factory.
+    Pyramid_config fixture factory.
 
     Used to create aditional fixtures returning pyramid's
     :class:`~pyramid.config.Configurator` object.
