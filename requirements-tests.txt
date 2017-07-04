@@ -1,6 +1,6 @@
 # package main requirements
 pyramid==1.9
-pytest==3.1.2
+pytest==3.1.3
 webtest==2.0.27
 # test requirements
 pytest-cov==2.5.1
