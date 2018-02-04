@@ -4,7 +4,7 @@ pytest==3.4.0
 webtest==2.0.29
 # test requirements
 pytest-cov==2.5.1
-coverage==4.4.2
+coverage==4.5
 # linters
 pylama==7.4.3
 pyflakes==1.6.0
