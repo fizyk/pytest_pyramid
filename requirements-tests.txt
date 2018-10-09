@@ -6,7 +6,7 @@ webtest==2.0.32
 pytest-cov==2.6.0
 coverage==4.5.1
 # linters
-pylama==7.6.2
+pylama==7.6.4
 pyflakes==2.0.0
 pycodestyle==2.4.0
 pydocstyle==2.1.1
