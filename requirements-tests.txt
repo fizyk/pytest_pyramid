@@ -9,5 +9,5 @@ coverage==4.5.1
 pylama==7.6.5
 pyflakes==2.0.0
 pycodestyle==2.4.0
-pydocstyle==2.1.1
+pydocstyle==3.0.0
 mccabe==0.6.1
