@@ -1,31 +1,42 @@
 language: python
 sudo: false
 python:
-    - "2.7"
-    - "3.3"
-    - "3.4"
-    - "3.5"
-    - "3.6"
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"
 # blocklist branches
 branches:
   except:
   - requires-io-master
 install:
-    - "pip install -r requirements-tests.txt"
-    - "python setup.py develop"
-    - "pip install pytest_pyramid[tests] coveralls wheel"
+  - pip install -r requirements-tests.txt
+  - pip install .[tests] coveralls wheel
 script:
-    - "py.test --pc tests/pyramid.test.ini --cov pytest_pyramid tests/ -p no:pytest_pyramid"
-    - "pylama"
+  - "py.test --pc tests/pyramid.test.ini --cov pytest_pyramid tests/ -p no:pytest_pyramid"
 after_success:
-    - coveralls
-
-deploy:
-    provider: pypi
-    user: fizyk
-    password:
+  - coveralls
+jobs:
+  include:
+  - stage: linters
+    python: 3.6
+    install:
+    - pip install -r requirements-lint.txt
+    - pip install .[tests]
+    script:
+    - pycodestyle
+    - pydocstyle
+    after_success: skip
+  - stage: deploy
+    python: 3.6
+    if: tag IS present
+    script: skip
+    deploy:
+      provider: pypi
+      user: fizyk
+      password:
         secure: AeTVshEncgd/rpqmTNeRYhTOgI4Pgw7h0lMMoqx+6xvAcpJKBi6TRqTSJ5J4zncVbMIXnDhmJl+Ftz4eFwNxkgR2D8IMUZZ2XlzU2FMvDPVQc+xNxJ6r9+xJfv6ROLWFSYiEeE+ELHb+WjcvRk9wBbiUr2TYzlI2nZipuXd9Hs0=
-    on:
+      on:
         tags: true
         repo: fizyk/pytest_pyramid
-    distributions: "sdist bdist_wheel"
+      distributions: "sdist bdist_wheel"

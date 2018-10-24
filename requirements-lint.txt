@@ -1,0 +1,4 @@
+# linters
+pycodestyle==2.4.0
+pydocstyle==3.0.0
+pygments==2.2.0
