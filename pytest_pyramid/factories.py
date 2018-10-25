@@ -74,7 +74,7 @@ def pyramid_app(config_fixture_name):
     """
     @pytest.fixture
     def pyramid_app(request):
-        config = request.getfuncargvalue(config_fixture_name)
+        config = request.getfixturevalue(config_fixture_name)
 
         app = TestApp(config.make_wsgi_app())
 
