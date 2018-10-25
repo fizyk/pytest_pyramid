@@ -28,7 +28,7 @@ extras_require = {
 
 setup(
     name='pytest_pyramid',
-    version='0.3.0',
+    version='0.3.1',
     description='pytest pyramid providing basic fixtures for testing ' +
     'pyramid applications with pytest test suite',
     long_description=(

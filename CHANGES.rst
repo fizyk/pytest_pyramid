@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-unreleased
+0.3.1
 ----------
 
 - fixed pytest deprecation warning
