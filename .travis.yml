@@ -14,7 +14,7 @@ branches:
   - /^dependabot.*$/
 install:
   - pip install -r requirements-tests.txt
-  - pip install .[tests] coveralls wheel
+  - pip install coveralls wheel
 script:
   - "py.test --pc tests/pyramid.test.ini --cov pytest_pyramid tests/ -p no:pytest_pyramid"
 after_success:
@@ -24,7 +24,6 @@ jobs:
   - stage: linters
     install:
     - pip install -r requirements-lint.txt
-    - pip install .[tests]
     script:
     - pycodestyle
     - pydocstyle
