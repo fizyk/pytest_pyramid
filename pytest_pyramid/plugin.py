@@ -7,15 +7,24 @@
 
 from pytest_pyramid import factories
 
+_help_config = "Path to default config ini for tests"
+
 
 def pytest_addoption(parser):
     """Pytest option configurator."""
+
+    parser.addini(
+        'pyramid_config',
+        default=None,
+        help=_help_config,
+    )
     parser.addoption(
         '--pc',
         action='store',
         default=None,
         metavar='path',
         dest='pyramid_config',
+        help=_help_config,
     )
 
 
