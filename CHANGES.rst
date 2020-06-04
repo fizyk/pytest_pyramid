@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-unreleased
+0.3.2
 ----------
 
 - add pyramid_config ini option
