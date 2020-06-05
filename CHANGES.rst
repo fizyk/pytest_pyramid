@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-unreleased
+0.3.3
 ----------
 
 - add additiona_fixtures to factories.pyramid_app
