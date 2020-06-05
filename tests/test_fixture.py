@@ -1,6 +1,8 @@
 """Testing fixtures."""
-from webtest import TestApp
 from pyramid.config import Configurator
+import pytest
+from webtest import TestApp
+
 from pytest_pyramid import factories
 
 
@@ -73,3 +75,29 @@ def test_pyramid_inheritance_config(
         len(pyramid_config_path.registry.settings) + 1
 
     assert pyramid_config_inheritance.registry.settings['one_value'] == '1'
+
+
+@pytest.fixture()
+def dummy_fixture():
+    """Return dummy fixture that does nothing."""
+
+
+pyramid_app_with_additional_fixtures = factories.pyramid_app(
+    "pyramid_config_path", "dummy_fixture"
+)
+
+
+def test_pyramid_app_with_additional_fixtures(
+    pyramid_app_with_additional_fixtures, request
+):
+    """
+    Test that pyramid_app factory works with additional_fixtures.
+
+    It checks if additional_fixtures are loaded for the test.
+    """
+    assert set(request.fixturenames) == set([
+        'pyramid_app_with_additional_fixtures',
+        'request',
+        'pyramid_config_path',
+        'dummy_fixture'
+    ])

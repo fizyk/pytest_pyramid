@@ -59,7 +59,7 @@ def pyramid_config(settings=None, config_path=None):
     return pyramid_config
 
 
-def pyramid_app(config_fixture_name):
+def pyramid_app(config_fixture_name, *additional_fixtures):
     """
     pyramid_app fixture factory.
 
@@ -68,12 +68,17 @@ def pyramid_app(config_fixture_name):
     :param str config_fixture_name: name of a fixture creating
         :class:`pyramid.config.Configurator`
 
+    :param List[str] additional_fixtures: list of any additional
+        fixture names that should be loaded before the pyramid_app fixture.
+
     :returns: TestApp based on pyramid's COnfigurator object as returned from
         fixture passed by  **config_fixture_name**
     :rtype: webtest.app.TestApp
     """
     @pytest.fixture
     def pyramid_app(request):
+        for additional_fixture in additional_fixtures:
+            request.getfixturevalue(additional_fixture)
         config = request.getfixturevalue(config_fixture_name)
 
         app = TestApp(config.make_wsgi_app())

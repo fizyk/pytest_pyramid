@@ -6,3 +6,4 @@ of pytest_pyramid along its history.
 
 * Grzegorz Śliwiński
 * Eric Hulser
+* Łukasz Bieszczad
