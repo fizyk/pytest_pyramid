@@ -1,3 +1,7 @@
+.. image:: https://raw.githubusercontent.com/fizyk/pytest_pyramid/master/logo.png
+    :width: 100px
+    :height: 100px
+
 pytest_pyramid
 ==============
 
