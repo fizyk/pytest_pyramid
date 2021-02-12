@@ -9,6 +9,7 @@ import os
 import pytest
 from webtest import TestApp
 from pyramid.config import Configurator
+
 try:
     from ConfigParser import ConfigParser
 except ImportError:  # py3
@@ -30,7 +31,8 @@ def pyramid_config(settings=None, config_path=None):
     :returns: configuration
     :rtype: `pyramid.config.Configurator`
     """
-    @pytest.fixture(scope='session')
+
+    @pytest.fixture(scope="session")
     def pyramid_config(request):
         app_settings = settings
         if app_settings is None:
@@ -39,19 +41,19 @@ def pyramid_config(settings=None, config_path=None):
                 config_parser = ConfigParser()
                 config_parser.read(cpath)
 
-                use = config_parser.get('app:main', 'use')
-                if use and use.startswith('config:'):
+                use = config_parser.get("app:main", "use")
+                if use and use.startswith("config:"):
                     base = os.path.dirname(cpath)
-                    filename = use.replace('config:', '').strip()
+                    filename = use.replace("config:", "").strip()
                     sub_path = os.path.join(base, filename)
                     load_settings(os.path.abspath(sub_path), io_settings)
 
-                for option, value in config_parser.items('app:main'):
+                for option, value in config_parser.items("app:main"):
                     io_settings[option] = value
 
             # load the application settings
             app_settings = {}
-            cpath = config_path or request.config.getvalue('pyramid_config')
+            cpath = config_path or request.config.getvalue("pyramid_config")
             load_settings(cpath, app_settings)
 
         return Configurator(settings=app_settings)
@@ -75,6 +77,7 @@ def pyramid_app(config_fixture_name, *additional_fixtures):
         fixture passed by  **config_fixture_name**
     :rtype: webtest.app.TestApp
     """
+
     @pytest.fixture
     def pyramid_app(request):
         for additional_fixture in additional_fixtures:
