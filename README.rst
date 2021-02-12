@@ -25,17 +25,6 @@ pytest_pyramid
     :target: https://pypi.python.org/pypi/pytest_pyramid/
     :alt: License
 
-Package status
---------------
-
-.. image:: https://travis-ci.org/fizyk/pytest_pyramid.svg?branch=v0.3.3
-    :target: https://travis-ci.org/fizyk/pytest_pyramid
-    :alt: Tests
-
-.. image:: https://coveralls.io/repos/fizyk/pytest_pyramid/badge.png?branch=v0.3.3
-    :target: https://coveralls.io/r/fizyk/pytest_pyramid?branch=v0.3.3
-    :alt: Coverage Status
-
 pytest_pyramid provides basic fixtures for testing pyramid applications with pytest test suite.
 
 By default, pytest_pyramid will create two fixtures: pyramid_config, which creates configurator based on config.ini file, and pyramid_app, which creates TestApp based on Configurator returned by pyramid_config.
@@ -63,4 +52,4 @@ Tests
 
 To run tests run this command:
 
-`py.test --pc tests/pyramid.test.ini`
+`pytest --pc tests/pyramid.test.ini`

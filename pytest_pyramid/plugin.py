@@ -14,20 +14,20 @@ def pytest_addoption(parser):
     """Pytest option configurator."""
 
     parser.addini(
-        'pyramid_config',
+        "pyramid_config",
         default=None,
         help=_help_config,
     )
     parser.addoption(
-        '--pc',
-        action='store',
+        "--pc",
+        action="store",
         default=None,
-        metavar='path',
-        dest='pyramid_config',
+        metavar="path",
+        dest="pyramid_config",
         help=_help_config,
     )
 
 
 # fixtures (made out of factories)
 pyramid_config = factories.pyramid_config()
-pyramid_app = factories.pyramid_app('pyramid_config')
+pyramid_app = factories.pyramid_app("pyramid_config")
