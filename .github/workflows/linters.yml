@@ -24,7 +24,7 @@ jobs:
         pip install -r requirements-lint.txt
     - name: Run pydocstyle
       run: |
-        pydocstyle pytest_pyramid/ tests/
+        pydocstyle src/ tests/
 
   pycodestyle:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
         pip install -r requirements-lint.txt
     - name: Run pydocstyle
       run: |
-        pycodestyle pytest_pyramid/ tests/
+        pycodestyle src/ tests/
   black:
     runs-on: ubuntu-latest
     steps:
