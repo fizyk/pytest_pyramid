@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+unreleased
+----------
+
+- [enhancement] Updated packaging configuration
+
 0.3.3
 ----------
 
