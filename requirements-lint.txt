@@ -1,4 +1,4 @@
 # linters
 pycodestyle==2.5.0
-pydocstyle==4.0.0
+pydocstyle==5.1.1
 -r requirements-test.txt
