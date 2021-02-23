@@ -16,7 +16,22 @@ except ImportError:  # py3
     from configparser import ConfigParser
 
 
-def pyramid_config(settings=None, config_path=None):
+def _load_settings(cpath, io_settings):
+    config_parser = ConfigParser()
+    config_parser.read(cpath)
+
+    use = config_parser.get("app:main", "use")
+    if use and use.startswith("config:"):
+        base = os.path.dirname(cpath)
+        filename = use.replace("config:", "").strip()
+        sub_path = os.path.join(base, filename)
+        _load_settings(os.path.abspath(sub_path), io_settings)
+
+    for option, value in config_parser.items("app:main"):
+        io_settings[option] = value
+
+
+def pyramid_config(config_path=None, settings=None):
     """
     Pyramid_config fixture factory.
 
@@ -34,28 +49,13 @@ def pyramid_config(settings=None, config_path=None):
 
     @pytest.fixture(scope="session")
     def pyramid_config(request):
-        app_settings = settings
-        if app_settings is None:
 
-            def load_settings(cpath, io_settings):
-                config_parser = ConfigParser()
-                config_parser.read(cpath)
+        # load the application settings
+        app_settings = {}
+        if cpath := config_path or request.config.getvalue("pyramid_config"):
+            _load_settings(cpath, app_settings)
 
-                use = config_parser.get("app:main", "use")
-                if use and use.startswith("config:"):
-                    base = os.path.dirname(cpath)
-                    filename = use.replace("config:", "").strip()
-                    sub_path = os.path.join(base, filename)
-                    load_settings(os.path.abspath(sub_path), io_settings)
-
-                for option, value in config_parser.items("app:main"):
-                    io_settings[option] = value
-
-            # load the application settings
-            app_settings = {}
-            cpath = config_path or request.config.getvalue("pyramid_config")
-            load_settings(cpath, app_settings)
-
+        app_settings.update(settings if settings else {})
         return Configurator(settings=app_settings)
 
     return pyramid_config

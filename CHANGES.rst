@@ -4,6 +4,10 @@ CHANGES
 unreleased
 ----------
 
+- [breaking] Changed order of the fixture factory parameters
+- [breaking] Now, if config_path is given, it'll always be loaded,
+  with settings extending it's configuration further.
+- [breaking] Support only python 3.8 and up
 - [enhancement] Updated packaging configuration
 
 0.3.3
