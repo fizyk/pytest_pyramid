@@ -3,6 +3,6 @@ pyramid==1.10.7
 pytest==5.0.1
 webtest==2.0.35
 # test requirements
-pytest-cov==2.7.1
+pytest-cov==2.11.1
 coverage==5.4
 -e .[test]
