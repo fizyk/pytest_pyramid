@@ -1,4 +1,5 @@
 """Testing fixtures."""
+from _pytest.fixtures import FixtureRequest
 from pyramid.config import Configurator
 import pytest
 from webtest import TestApp
@@ -8,7 +9,7 @@ from pytest_pyramid import factories
 TestApp.__test__ = False
 
 
-def test_pyramid_app(pyramid_app):
+def test_pyramid_app(pyramid_app: TestApp) -> None:
     """
     Make sure we have everything needed for pyramid integration tests running.
 
@@ -32,7 +33,9 @@ pyramid_config_inheritance = factories.pyramid_config(
 pyramid_config_settings = factories.pyramid_config(settings={"env": "pytest"})
 
 
-def test_pyramid_config(pyramid_config, pyramid_config_path):
+def test_pyramid_config(
+    pyramid_config: Configurator, pyramid_config_path: Configurator
+) -> None:
     """Test whether both fixtures are generated correctly."""
     assert isinstance(pyramid_config, Configurator)
     assert isinstance(pyramid_config_path, Configurator)
@@ -43,7 +46,7 @@ def test_pyramid_config(pyramid_config, pyramid_config_path):
     )
 
 
-def test_pyramid_config_settings(pyramid_config_settings):
+def test_pyramid_config_settings(pyramid_config_settings: Configurator) -> None:
     """Test checking creating Configurator based on settings."""
     assert isinstance(pyramid_config_settings, Configurator)
     assert "env" in pyramid_config_settings.registry.settings
@@ -51,8 +54,8 @@ def test_pyramid_config_settings(pyramid_config_settings):
 
 
 def test_pyramid_inheritance_config(
-    pyramid_config_path, pyramid_config_inheritance
-):
+    pyramid_config_path: Configurator, pyramid_config_inheritance: Configurator
+) -> None:
     """
     Test reading inheriting config through pytest_pyramid.
 
@@ -89,7 +92,7 @@ def test_pyramid_inheritance_config(
 
 
 @pytest.fixture()
-def dummy_fixture():
+def dummy_fixture() -> None:
     """Return dummy fixture that does nothing."""
 
 
@@ -99,8 +102,8 @@ pyramid_app_with_additional_fixtures = factories.pyramid_app(
 
 
 def test_pyramid_app_with_additional_fixtures(
-    pyramid_app_with_additional_fixtures, request
-):
+    pyramid_app_with_additional_fixtures: TestApp, request: FixtureRequest
+) -> None:
     """
     Test that pyramid_app factory works with additional_fixtures.
 

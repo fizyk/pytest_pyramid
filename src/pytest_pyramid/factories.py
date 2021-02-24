@@ -6,17 +6,17 @@
 """Pytest's fixture factories."""
 
 import os
+from typing import Dict, Any, Callable
+
 import pytest
+from _pytest.fixtures import FixtureRequest
 from webtest import TestApp
 from pyramid.config import Configurator
 
-try:
-    from ConfigParser import ConfigParser
-except ImportError:  # py3
-    from configparser import ConfigParser
+from configparser import ConfigParser
 
 
-def _load_settings(cpath, io_settings):
+def _load_settings(cpath: str, io_settings: Dict[str, Any]) -> None:
     config_parser = ConfigParser()
     config_parser.read(cpath)
 
@@ -31,7 +31,9 @@ def _load_settings(cpath, io_settings):
         io_settings[option] = value
 
 
-def pyramid_config(config_path=None, settings=None):
+def pyramid_config(
+    config_path: str = None, settings: Dict[str, Any] = None
+) -> Callable[[FixtureRequest], Configurator]:
     """
     Pyramid_config fixture factory.
 
@@ -48,10 +50,10 @@ def pyramid_config(config_path=None, settings=None):
     """
 
     @pytest.fixture(scope="session")
-    def pyramid_config(request):
+    def pyramid_config(request: FixtureRequest) -> Configurator:
 
         # load the application settings
-        app_settings = {}
+        app_settings: Dict[str, Any] = {}
         if cpath := config_path or request.config.getvalue("pyramid_config"):
             _load_settings(cpath, app_settings)
 
@@ -61,7 +63,9 @@ def pyramid_config(config_path=None, settings=None):
     return pyramid_config
 
 
-def pyramid_app(config_fixture_name, *additional_fixtures):
+def pyramid_app(
+    config_fixture_name: str, *additional_fixtures: str
+) -> Callable[[FixtureRequest], TestApp]:
     """
     pyramid_app fixture factory.
 
@@ -79,13 +83,11 @@ def pyramid_app(config_fixture_name, *additional_fixtures):
     """
 
     @pytest.fixture
-    def pyramid_app(request):
+    def pyramid_app(request: FixtureRequest) -> TestApp:
         for additional_fixture in additional_fixtures:
             request.getfixturevalue(additional_fixture)
         config = request.getfixturevalue(config_fixture_name)
 
-        app = TestApp(config.make_wsgi_app())
-
-        return app
+        return TestApp(config.make_wsgi_app())
 
     return pyramid_app

@@ -4,13 +4,14 @@
 # This module is part of pytest_pyramid and is released under
 # the MIT License (MIT): http://opensource.org/licenses/MIT
 """Plugin's definition and basic fixtures."""
+from _pytest.config.argparsing import Parser
 
 from pytest_pyramid import factories
 
 _help_config = "Path to default config ini for tests"
 
 
-def pytest_addoption(parser):
+def pytest_addoption(parser: Parser) -> None:
     """Pytest option configurator."""
 
     parser.addini(
