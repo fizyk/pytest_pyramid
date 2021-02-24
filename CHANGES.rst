@@ -9,6 +9,7 @@ unreleased
   with settings extending it's configuration further.
 - [breaking] Support only python 3.8 and up
 - [enhancement] Updated packaging configuration
+- [enhancement] Typed all the code
 
 0.3.3
 ----------
