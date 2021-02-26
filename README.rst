@@ -9,8 +9,8 @@ pytest_pyramid
     :target: https://pypi.python.org/pypi/pytest_pyramid/
     :alt: Latest PyPI version
 
-.. image:: https://readthedocs.io/projects/pytest_pyramid/badge/?version=v0.3.3
-    :target: http://pytest_pyramid.readthedocs.io/en/v0.3.3/
+.. image:: https://readthedocs.io/projects/pytest_pyramid/badge/?version=v1.0.0
+    :target: http://pytest_pyramid.readthedocs.io/en/v1.0.0/
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/pypi/wheel/pytest_pyramid.svg

@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-unreleased
+1.0.0
 ----------
 
 - [breaking] Changed order of the fixture factory parameters
