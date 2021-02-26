@@ -49,7 +49,7 @@ Fixtures
 pytest_pyramid provides two fixtures to be used in pytest tests:
 
 * **pyramid_config** - fixture providing pyramid's Configurator instance as
-    defined in pyramid config's file
+  defined in pyramid config's file
 * **pyramid_app** - pyramid application for testing - a **webtest.app.TestApp**
 
 Both of these fixtures depend on the Config file passed in the command line.
