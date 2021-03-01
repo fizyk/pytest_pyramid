@@ -4,5 +4,5 @@ pytest==6.2.2
 webtest==2.0.35
 # test requirements
 pytest-cov==2.11.1
-coverage==5.4
+coverage==5.5
 -e .[test]
