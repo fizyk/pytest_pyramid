@@ -1,5 +1,5 @@
 # package main requirements
-pyramid==1.10.7
+pyramid==2.0
 pytest==6.2.2
 webtest==2.0.35
 # test requirements
