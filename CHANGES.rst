@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-unreleased
+1.0.1
 ----------
 
 - [packaging] Defined entrypoint in setup.cfg
