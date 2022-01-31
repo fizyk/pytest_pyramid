@@ -2,5 +2,5 @@
 pycodestyle==2.8.0
 pydocstyle==6.1.1
 mypy==0.931
-black==21.12b0
+black==22.1.0
 -r requirements-test.txt
