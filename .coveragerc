@@ -1,2 +1,4 @@
 [run]
-source = pytest_pyramid
+include =
+    pytest_pyramid/*
+    tests/*

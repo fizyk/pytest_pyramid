@@ -1,0 +1,5 @@
+Changed project structure. Moved package out of src into root.
+
+This will help testing and running code under pipenv/pipfile
+which has problems installing package placed in subdirectory,
+while having package definition on the same place as pipfile.

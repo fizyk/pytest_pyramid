@@ -1,0 +1,1 @@
+Fixed issue where pyramid_config option wasn't being properly read from ini file.

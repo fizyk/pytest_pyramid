@@ -53,7 +53,11 @@ def pyramid_config(
 
         # load the application settings
         app_settings: Dict[str, Any] = {}
-        if cpath := config_path or request.config.getvalue("pyramid_config"):
+        if (
+            cpath := config_path
+            or request.config.getoption("pyramid_config")
+            or request.config.getini("pyramid_config")
+        ):
             _load_settings(cpath, app_settings)
 
         app_settings.update(settings if settings else {})
