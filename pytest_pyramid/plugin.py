@@ -14,15 +14,13 @@ def pytest_addoption(parser: Parser) -> None:
     """Pytest option configurator."""
 
     parser.addini(
-        "pyramid_config",
-        default=None,
+        name="pyramid_config",
         help=_help_config,
+        default=None,
     )
     parser.addoption(
         "--pc",
         action="store",
-        default=None,
-        metavar="path",
         dest="pyramid_config",
         help=_help_config,
     )
