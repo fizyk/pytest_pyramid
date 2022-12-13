@@ -1,0 +1,1 @@
+Migrate project configuration from setup.cfg to pyproject.toml, dropped setup.py

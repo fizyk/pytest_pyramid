@@ -12,7 +12,6 @@ _help_config = "Path to default config ini for tests"
 
 def pytest_addoption(parser: Parser) -> None:
     """Pytest option configurator."""
-
     parser.addini(
         name="pyramid_config",
         help=_help_config,
