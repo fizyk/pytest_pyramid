@@ -93,3 +93,12 @@ Tests
 To run tests run this command:
 
 `pytest --pc tests/pyramid.test.ini`
+
+Release
+=======
+
+Install pipenv and --dev dependencies first, Then run:
+
+.. code-block::
+
+    pipenv run tbump [NEW_VERSION]
