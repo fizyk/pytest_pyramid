@@ -1,3 +1,8 @@
+CHANGES
+=======
+
+.. towncrier release notes start
+
 1.0.2 (2022-12-13)
 ==================
 
@@ -28,9 +33,6 @@ Miscellaneus
   while having package definition on the same place as pipfile. (`#314 <https://https://github.com/fizyk/pytest_pyramid/issues/314>`_)
 - Migrate project configuration from setup.cfg to pyproject.toml, dropped setup.py (`#315 <https://https://github.com/fizyk/pytest_pyramid/issues/315>`_)
 
-
-CHANGES
-=======
 
 1.0.1
 ----------
