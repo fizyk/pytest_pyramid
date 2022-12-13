@@ -1,6 +1,86 @@
+[project]
+name = "pytest_pyramid"
+version = "1.0.1"
+description = "pytest_pyramid - provides fixtures for testing pyramid applications with pytest test suite"
+readme = "README.rst"
+keywords = ["pyramid", "pytest", "testing"]
+license = {file = "LICENSE"}
+authors = [
+    {name = "Grzegorz Śliwiński", email = "fizyk+pypi@fizyk.dev"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Plugins",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Framework :: Pyramid",
+    "Framework :: Pytest",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Unit",
+]
+dependencies = [
+    "pytest",
+    "pyramid",
+    "webtest",
+]
+requires-python = ">= 3.8"
+
+[project.urls]
+"Source" = "https://github.com/fizyk/pytest_pyramid/"
+"Bug Tracker" = "https://github.com/fizyk/pytest_pyramid/issues"
+"Changelog" = "https://github.com/fizyk/pytest_pyramid/blob/v1.0.1/CHANGES.rst"
+
+[project.entry-points."pytest11"]
+pytest_pyramid = "pytest_pyramid.plugin"
+
 [build-system]
-requires = ["setuptools >= 40.6.0", "wheel"]
+requires = ["setuptools >= 61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+zip-safe = true
+packages = ["pytest_pyramid"]
+
+[tool.pytest.ini_options]
+xfail_strict=true
+pyramid_config = "tests/pyramid.test.ini"
+testpaths = "tests"
+
+[tool.towncrier]
+directory = "newsfragments"
+single_file=true
+filename="CHANGES.rst"
+issue_format="`#{issue} <https://https://github.com/fizyk/pytest_pyramid/issues/{issue}>`_"
+
+[tool.towncrier.fragment.feature]
+name = "Features"
+showcontent = true
+
+[tool.towncrier.fragment.bugfix]
+name = "Bugfixes"
+showcontent = true
+
+[tool.towncrier.fragment.break]
+name = "Breaking changes"
+showcontent = true
+
+[tool.towncrier.fragment.misc]
+name = "Miscellaneus"
+showcontent = true
+
+[tool.pydocstyle]
+ignore = "D203,D212"
 
 [tool.black]
 line-length = 80
