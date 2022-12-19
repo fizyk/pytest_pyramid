@@ -11,7 +11,7 @@ webtest = "==3"
 [dev-packages]
 towncrier = "==22.8"
 pytest-cov = "==4"
-coverage = "==6.5"
+coverage = "==7.0.0"
 pycodestyle = "==2.10.0"
 mypy = "==0.991"
 black = "==22.12.0"
