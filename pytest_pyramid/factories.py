@@ -50,7 +50,6 @@ def pyramid_config(
 
     @pytest.fixture(scope="session")
     def pyramid_config(request: FixtureRequest) -> Configurator:
-
         # load the application settings
         app_settings: Dict[str, Any] = {}
         if (
