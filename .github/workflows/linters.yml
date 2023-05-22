@@ -10,5 +10,7 @@ jobs:
   basic_linters:
     uses: fizyk/actions-reuse/.github/workflows/linters-python.yml@v2.1.2
     with:
-      pipenv: true
       mypy: true
+      black: true
+      pycodestyle: true
+      pydocstyle: true
