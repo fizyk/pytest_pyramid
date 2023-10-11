@@ -1,7 +1,7 @@
 """Testing fixtures."""
+import pytest
 from _pytest.fixtures import FixtureRequest
 from pyramid.config import Configurator
-import pytest
 from webtest import TestApp
 
 from pytest_pyramid import factories
@@ -10,8 +10,7 @@ TestApp.__test__ = False
 
 
 def test_pyramid_app(pyramid_app: TestApp) -> None:
-    """
-    Make sure we have everything needed for pyramid integration tests running.
+    """Make sure we have everything needed for pyramid integration tests running.
 
     Check if:
     - app is instance of TestApp
@@ -23,9 +22,7 @@ def test_pyramid_app(pyramid_app: TestApp) -> None:
     assert res.status_code == 404
 
 
-pyramid_config_path = factories.pyramid_config(
-    config_path="tests/pyramid.test.ini"
-)
+pyramid_config_path = factories.pyramid_config(config_path="tests/pyramid.test.ini")
 pyramid_config_inheritance = factories.pyramid_config(
     config_path="tests/pyramid.use.test.ini"
 )
@@ -40,10 +37,7 @@ def test_pyramid_config(
     assert isinstance(pyramid_config, Configurator)
     assert isinstance(pyramid_config_path, Configurator)
     assert pyramid_config_path != pyramid_config
-    assert (
-        pyramid_config_path.registry.settings
-        == pyramid_config.registry.settings
-    )
+    assert pyramid_config_path.registry.settings == pyramid_config.registry.settings
 
 
 def test_pyramid_config_settings(pyramid_config_settings: Configurator) -> None:
@@ -56,8 +50,7 @@ def test_pyramid_config_settings(pyramid_config_settings: Configurator) -> None:
 def test_pyramid_inheritance_config(
     pyramid_config_path: Configurator, pyramid_config_inheritance: Configurator
 ) -> None:
-    """
-    Test reading inheriting config through pytest_pyramid.
+    """Test reading inheriting config through pytest_pyramid.
 
     Given:
         - that one config inherits the other,
@@ -104,8 +97,7 @@ pyramid_app_with_additional_fixtures = factories.pyramid_app(
 def test_pyramid_app_with_additional_fixtures(
     pyramid_app_with_additional_fixtures: TestApp, request: FixtureRequest
 ) -> None:
-    """
-    Test that pyramid_app factory works with additional_fixtures.
+    """Test that pyramid_app factory works with additional_fixtures.
 
     It checks if additional_fixtures are loaded for the test.
     """

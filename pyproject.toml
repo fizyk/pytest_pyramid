@@ -79,14 +79,19 @@ showcontent = true
 name = "Miscellaneus"
 showcontent = false
 
-[tool.pydocstyle]
-ignore = "D203,D212"
-
 [tool.black]
-line-length = 80
+line-length = 90
 target-version = ['py39']
 include = '.*\.pyi?$'
 
+[tool.ruff]
+line-length = 90
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "I",   # isort
+    "D",   # pydocstyle
+]
 
 [tool.tbump]
 # Uncomment this if your project is hosted on GitHub:

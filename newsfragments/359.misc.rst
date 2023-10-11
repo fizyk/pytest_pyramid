@@ -1,0 +1,2 @@
+Use ruff instead of pydocstyle and pycodestyle.
+Increase line-length limit to 90 characters
