@@ -1,6 +1,6 @@
 [project]
 name = "pytest_pyramid"
-version = "1.0.2"
+version = "1.0.3"
 description = "pytest_pyramid - provides fixtures for testing pyramid applications with pytest test suite"
 readme = "README.rst"
 keywords = ["pyramid", "pytest", "testing"]
@@ -40,7 +40,7 @@ requires-python = ">= 3.8"
 [project.urls]
 "Source" = "https://github.com/fizyk/pytest_pyramid/"
 "Bug Tracker" = "https://github.com/fizyk/pytest_pyramid/issues"
-"Changelog" = "https://github.com/fizyk/pytest_pyramid/blob/v1.0.2/CHANGES.rst"
+"Changelog" = "https://github.com/fizyk/pytest_pyramid/blob/v1.0.3/CHANGES.rst"
 
 [project.entry-points."pytest11"]
 pytest_pyramid = "pytest_pyramid.plugin"
@@ -99,7 +99,7 @@ select = [
 # github_url = "https://github.com/<user or organization>/<project>/"
 
 [tool.tbump.version]
-current = "1.0.2"
+current = "1.0.3"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before

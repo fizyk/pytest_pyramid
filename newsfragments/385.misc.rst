@@ -1,1 +1,0 @@
-Drop pipfile.lock from repository,rely on cached/artifact per each python version

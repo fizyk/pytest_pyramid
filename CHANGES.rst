@@ -3,6 +3,21 @@ CHANGES
 
 .. towncrier release notes start
 
+1.0.3 (2023-10-11)
+==================
+
+Features
+--------
+
+- Add support for Python 3.12 (`#388 <https://https://github.com/fizyk/pytest_pyramid/issues/388>`_)
+
+
+Miscellaneus
+------------
+
+- `#339 <https://https://github.com/fizyk/pytest_pyramid/issues/339>`_, `#357 <https://https://github.com/fizyk/pytest_pyramid/issues/357>`_, `#359 <https://https://github.com/fizyk/pytest_pyramid/issues/359>`_, `#385 <https://https://github.com/fizyk/pytest_pyramid/issues/385>`_
+
+
 1.0.2 (2022-12-13)
 ==================
 
