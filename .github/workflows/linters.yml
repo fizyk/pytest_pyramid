@@ -12,5 +12,4 @@ jobs:
     with:
       mypy: true
       black: true
-      pycodestyle: true
-      pydocstyle: true
+      ruff: true

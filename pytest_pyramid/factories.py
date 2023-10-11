@@ -5,14 +5,13 @@
 """Pytest's fixture factories."""
 
 import os
-from typing import Dict, Any, Callable
+from configparser import ConfigParser
+from typing import Any, Callable, Dict
 
 import pytest
 from _pytest.fixtures import FixtureRequest
-from webtest import TestApp
 from pyramid.config import Configurator
-
-from configparser import ConfigParser
+from webtest import TestApp
 
 
 def _load_settings(cpath: str, io_settings: Dict[str, Any]) -> None:
@@ -33,8 +32,7 @@ def _load_settings(cpath: str, io_settings: Dict[str, Any]) -> None:
 def pyramid_config(
     config_path: str = None, settings: Dict[str, Any] = None
 ) -> Callable[[FixtureRequest], Configurator]:
-    """
-    Pyramid_config fixture factory.
+    """Pyramid_config fixture factory.
 
     Used to create aditional fixtures returning pyramid's
     :class:`~pyramid.config.Configurator` object.
@@ -68,8 +66,7 @@ def pyramid_config(
 def pyramid_app(
     config_fixture_name: str, *additional_fixtures: str
 ) -> Callable[[FixtureRequest], TestApp]:
-    """
-    pyramid_app fixture factory.
+    """pyramid_app fixture factory.
 
     Creates a TestApp instance based on.
 
