@@ -13,7 +13,7 @@ towncrier = "==23.6.0"
 pytest-cov = "==4.1.0"
 coverage = "==7.3.2"
 pycodestyle = "==2.11.0"
-mypy = "==1.5.1"
+mypy = "==1.6.0"
 black = "==23.9.1"
 pydocstyle = {version = "==6.3.0", extras = ["toml"]}
 tbump = "==6.11.0"
