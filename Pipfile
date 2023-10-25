@@ -9,7 +9,7 @@ pytest = "==7.4.2"
 webtest = "==3"
 
 [dev-packages]
-towncrier = "==23.6.0"
+towncrier = "==23.10.0"
 pytest-cov = "==4.1.0"
 coverage = "==7.3.2"
 mypy = "==1.6.1"
