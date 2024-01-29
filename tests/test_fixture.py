@@ -1,4 +1,5 @@
 """Testing fixtures."""
+
 import pytest
 from _pytest.fixtures import FixtureRequest
 from pyramid.config import Configurator
