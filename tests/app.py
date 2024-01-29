@@ -1,4 +1,5 @@
 """Define dummy app for tests."""
+
 from typing import Any, Dict
 
 from pyramid.config import Configurator
