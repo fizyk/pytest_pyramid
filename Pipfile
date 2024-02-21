@@ -11,7 +11,7 @@ webtest = "==3"
 [dev-packages]
 towncrier = "==23.11.0"
 pytest-cov = "==4.1.0"
-coverage = "==7.4.1"
+coverage = "==7.4.2"
 mypy = "==1.8.0"
 black = "==24.2.0"
 tbump = "==6.11.0"
