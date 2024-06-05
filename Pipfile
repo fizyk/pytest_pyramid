@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 pyramid = "==2.0.2"
-pytest = "==8.2.1"
+pytest = "==8.2.2"
 webtest = "==3"
 
 [dev-packages]
