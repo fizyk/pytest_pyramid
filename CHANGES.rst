@@ -3,6 +3,28 @@ CHANGES
 
 .. towncrier release notes start
 
+1.0.4 (2024-10-24)
+==================
+
+Breaking changes
+----------------
+
+- Drop support for Python 3.8 (Reached EOL)
+
+
+Features
+--------
+
+- Add support for Python 3.13
+
+
+Miscellaneus
+------------
+
+- `#422 <https://https://github.com/fizyk/pytest_pyramid/issues/422>`_
+- Do not install black on python versions older than 3.12
+
+
 1.0.3 (2023-10-11)
 ==================
 
