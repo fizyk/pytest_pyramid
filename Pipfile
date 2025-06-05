@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 pyramid = "==2.0.2"
 pytest = "==8.4.0"
-webtest = "==3.0.4"
+webtest = "==3.0.6"
 
 [dev-packages]
 towncrier = "==24.8.0"
