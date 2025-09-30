@@ -6,7 +6,7 @@
 
 import os
 from configparser import ConfigParser
-from typing import Any, Callable, Dict
+from typing import Any, Callable
 
 import pytest
 from _pytest.fixtures import FixtureRequest
@@ -14,7 +14,7 @@ from pyramid.config import Configurator
 from webtest import TestApp
 
 
-def _load_settings(cpath: str, io_settings: Dict[str, Any]) -> None:
+def _load_settings(cpath: str, io_settings: dict[str, Any]) -> None:
     config_parser = ConfigParser()
     config_parser.read(cpath)
 
@@ -30,26 +30,23 @@ def _load_settings(cpath: str, io_settings: Dict[str, Any]) -> None:
 
 
 def pyramid_config(
-    config_path: str = None, settings: Dict[str, Any] = None
+    config_path: str = None, settings: dict[str, Any] = None
 ) -> Callable[[FixtureRequest], Configurator]:
     """Pyramid_config fixture factory.
 
     Used to create aditional fixtures returning pyramid's
     :class:`~pyramid.config.Configurator` object.
 
-    :param dict settings: optional parameter delivering settings for building
+    :param settings: optional parameter delivering settings for building
         a Configurator object.
-    :param str config_path: optional parameter delivering path to pyramid
+    :param config_path: optional parameter delivering path to pyramid
         configuration file
-
-    :returns: configuration
-    :rtype: `pyramid.config.Configurator`
     """
 
     @pytest.fixture(scope="session")
     def pyramid_config(request: FixtureRequest) -> Configurator:
         # load the application settings
-        app_settings: Dict[str, Any] = {}
+        app_settings: dict[str, Any] = {}
         if (
             cpath := config_path
             or request.config.getoption("pyramid_config")
@@ -70,14 +67,14 @@ def pyramid_app(
 
     Creates a TestApp instance based on.
 
-    :param str config_fixture_name: name of a fixture creating
+    :param config_fixture_name: name of a fixture creating
         :class:`pyramid.config.Configurator`
 
-    :param List[str] additional_fixtures: list of any additional
+    :param additional_fixtures: list of any additional
         fixture names that should be loaded before the pyramid_app fixture.
 
     :returns: TestApp based on pyramid's COnfigurator object as returned from
-        fixture passed by  **config_fixture_name**
+         the fixture passed by **config_fixture_name**
     :rtype: webtest.app.TestApp
     """
 
