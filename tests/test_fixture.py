@@ -24,16 +24,12 @@ def test_pyramid_app(pyramid_app: TestApp) -> None:
 
 
 pyramid_config_path = factories.pyramid_config(config_path="tests/pyramid.test.ini")
-pyramid_config_inheritance = factories.pyramid_config(
-    config_path="tests/pyramid.use.test.ini"
-)
+pyramid_config_inheritance = factories.pyramid_config(config_path="tests/pyramid.use.test.ini")
 
 pyramid_config_settings = factories.pyramid_config(settings={"env": "pytest"})
 
 
-def test_pyramid_config(
-    pyramid_config: Configurator, pyramid_config_path: Configurator
-) -> None:
+def test_pyramid_config(pyramid_config: Configurator, pyramid_config_path: Configurator) -> None:
     """Test whether both fixtures are generated correctly."""
     assert isinstance(pyramid_config, Configurator)
     assert isinstance(pyramid_config_path, Configurator)
@@ -67,8 +63,7 @@ def test_pyramid_inheritance_config(
     assert isinstance(pyramid_config_path, Configurator)
 
     assert (
-        pyramid_config_inheritance.registry.settings["inheriting"]
-        == "I do not really set anything"
+        pyramid_config_inheritance.registry.settings["inheriting"] == "I do not really set anything"
     )
     assert "inheriting" not in pyramid_config_path.registry.settings
 
@@ -90,9 +85,7 @@ def dummy_fixture() -> None:
     """Return a dummy fixture that does nothing."""
 
 
-pyramid_app_with_additional_fixtures = factories.pyramid_app(
-    "pyramid_config_path", "dummy_fixture"
-)
+pyramid_app_with_additional_fixtures = factories.pyramid_app("pyramid_config_path", "dummy_fixture")
 
 
 def test_pyramid_app_with_additional_fixtures(

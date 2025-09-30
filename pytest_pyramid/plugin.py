@@ -3,6 +3,7 @@
 # This module is part of pytest_pyramid and is released under
 # the MIT License (MIT): http://opensource.org/licenses/MIT
 """Plugin's definition and basic fixtures."""
+
 from _pytest.config.argparsing import Parser
 
 from pytest_pyramid import factories
