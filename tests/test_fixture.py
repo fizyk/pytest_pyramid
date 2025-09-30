@@ -14,8 +14,8 @@ def test_pyramid_app(pyramid_app: TestApp) -> None:
     """Make sure we have everything needed for pyramid integration tests running.
 
     Check if:
-    - app is instance of TestApp
-    - we get proper status code from not defined route
+    - app is an instance of TestApp
+    - we get proper status code from a not defined route
     """
     assert isinstance(pyramid_app, TestApp)
 
@@ -87,7 +87,7 @@ def test_pyramid_inheritance_config(
 
 @pytest.fixture()
 def dummy_fixture() -> None:
-    """Return dummy fixture that does nothing."""
+    """Return a dummy fixture that does nothing."""
 
 
 pyramid_app_with_additional_fixtures = factories.pyramid_app(
@@ -102,11 +102,9 @@ def test_pyramid_app_with_additional_fixtures(
 
     It checks if additional_fixtures are loaded for the test.
     """
-    assert set(request.fixturenames) == set(
-        [
-            "pyramid_app_with_additional_fixtures",
-            "request",
-            "pyramid_config_path",
-            "dummy_fixture",
-        ]
-    )
+    assert set(request.fixturenames) == {
+        "pyramid_app_with_additional_fixtures",
+        "request",
+        "pyramid_config_path",
+        "dummy_fixture",
+    }
