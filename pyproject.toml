@@ -34,7 +34,7 @@ dependencies = [
     "pyramid",
     "webtest",
 ]
-requires-python = ">= 3.9"
+requires-python = ">= 3.10"
 
 [project.urls]
 "Source" = "https://github.com/fizyk/pytest_pyramid/"
@@ -79,13 +79,11 @@ showcontent = true
 name = "Miscellaneus"
 showcontent = false
 
-[tool.black]
-line-length = 90
-target-version = ['py310']
-include = '.*\.pyi?$'
-
 [tool.ruff]
-line-length = 90
+line-length = 100
+target-version = 'py310'
+
+[tool.ruff.lint]
 select = [
     "E",   # pycodestyle
     "F",   # pyflakes
