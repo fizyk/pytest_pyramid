@@ -4,4 +4,4 @@
 # the MIT License (MIT): http://opensource.org/licenses/MIT
 """pytest_pyramid main module."""
 
-__version__ = "1.0.4"  # pragma: no cover
+__version__ = "1.1.0"  # pragma: no cover

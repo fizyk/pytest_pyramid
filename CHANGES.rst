@@ -3,6 +3,29 @@ CHANGES
 
 .. towncrier release notes start
 
+pytest_pyramid 1.1.0 (2025-09-30)
+=================================
+
+Breaking changes
+----------------
+
+- Drop support for Python 3.9
+
+
+Features
+--------
+
+- Add support for Python 3.14
+
+
+Miscellaneus
+------------
+
+- Adjust workflows for actions-reuse 3
+- Migrate from black to ruff-format
+- Use pre-commit for maintaining code style and linting
+
+
 1.0.4 (2024-10-24)
 ==================
 
