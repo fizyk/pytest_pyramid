@@ -52,10 +52,10 @@ build-backend = "setuptools.build_meta"
 zip-safe = true
 packages = ["pytest_pyramid"]
 
-[tool.pytest.ini_options]
-xfail_strict=true
+[tool.pytest]
+strict_xfail=true
 pyramid_config = "tests/pyramid.test.ini"
-testpaths = "tests"
+testpaths = ["tests"]
 
 [tool.towncrier]
 directory = "newsfragments"
