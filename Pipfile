@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pyramid = "==2.0.2"
+setuptools = "<82.0.0"
 pytest = "==9.0.2"
 webtest = "==3.0.7"
 
