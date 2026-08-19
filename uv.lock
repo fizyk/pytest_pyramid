@@ -729,7 +729,6 @@ dev = [
     { name = "pyramid" },
     { name = "pytest" },
     { name = "pytest-cov" },
-    { name = "setuptools" },
     { name = "towncrier" },
     { name = "webtest" },
 ]
@@ -751,7 +750,6 @@ dev = [
     { name = "pyramid", specifier = "==2.1.0" },
     { name = "pytest", specifier = "==9.1.1" },
     { name = "pytest-cov", specifier = "==7.1.0" },
-    { name = "setuptools", specifier = "<82.0.0" },
     { name = "towncrier", specifier = "==25.8.0" },
     { name = "webtest", specifier = "==3.0.7" },
 ]
