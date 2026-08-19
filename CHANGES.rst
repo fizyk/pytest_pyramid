@@ -44,7 +44,7 @@ Features
 Miscellaneus
 ------------
 
-- `#422 <https://https://github.com/fizyk/pytest_pyramid/issues/422>`_
+- `#422 <https://github.com/fizyk/pytest_pyramid/issues/422>`_
 - Do not install black on python versions older than 3.12
 
 
@@ -54,13 +54,13 @@ Miscellaneus
 Features
 --------
 
-- Add support for Python 3.12 (`#388 <https://https://github.com/fizyk/pytest_pyramid/issues/388>`_)
+- Add support for Python 3.12 (`#388 <https://github.com/fizyk/pytest_pyramid/issues/388>`_)
 
 
 Miscellaneus
 ------------
 
-- `#339 <https://https://github.com/fizyk/pytest_pyramid/issues/339>`_, `#357 <https://https://github.com/fizyk/pytest_pyramid/issues/357>`_, `#359 <https://https://github.com/fizyk/pytest_pyramid/issues/359>`_, `#385 <https://https://github.com/fizyk/pytest_pyramid/issues/385>`_
+- `#339 <https://github.com/fizyk/pytest_pyramid/issues/339>`_, `#357 <https://github.com/fizyk/pytest_pyramid/issues/357>`_, `#359 <https://github.com/fizyk/pytest_pyramid/issues/359>`_, `#385 <https://github.com/fizyk/pytest_pyramid/issues/385>`_
 
 
 1.0.2 (2022-12-13)
@@ -69,29 +69,29 @@ Miscellaneus
 Bugfixes
 --------
 
-- Fixed issue where pyramid_config option wasn't being properly read from ini file. (`#314 <https://https://github.com/fizyk/pytest_pyramid/issues/314>`_)
+- Fixed issue where pyramid_config option wasn't being properly read from ini file. (`#314 <https://github.com/fizyk/pytest_pyramid/issues/314>`_)
 
 
 Features
 --------
 
-- Add Python 3.11 to the list of supported python versions. (`#309 <https://https://github.com/fizyk/pytest_pyramid/issues/309>`_)
+- Add Python 3.11 to the list of supported python versions. (`#309 <https://github.com/fizyk/pytest_pyramid/issues/309>`_)
 
 
 Miscellaneus
 ------------
 
-- Added project urls to display on pypi page (`#305 <https://https://github.com/fizyk/pytest_pyramid/issues/305>`_)
-- Use towncrier to manage news fragments and changelog (`#307 <https://https://github.com/fizyk/pytest_pyramid/issues/307>`_)
-- Migrate dependency management into pipenv (`#308 <https://https://github.com/fizyk/pytest_pyramid/issues/308>`_)
-- Migrate versioning tool to tbump (`#311 <https://https://github.com/fizyk/pytest_pyramid/issues/311>`_)
-- Migrate automerge action to a shared workflow (`#312 <https://https://github.com/fizyk/pytest_pyramid/issues/312>`_)
+- Added project urls to display on pypi page (`#305 <https://github.com/fizyk/pytest_pyramid/issues/305>`_)
+- Use towncrier to manage news fragments and changelog (`#307 <https://github.com/fizyk/pytest_pyramid/issues/307>`_)
+- Migrate dependency management into pipenv (`#308 <https://github.com/fizyk/pytest_pyramid/issues/308>`_)
+- Migrate versioning tool to tbump (`#311 <https://github.com/fizyk/pytest_pyramid/issues/311>`_)
+- Migrate automerge action to a shared workflow (`#312 <https://github.com/fizyk/pytest_pyramid/issues/312>`_)
 - Changed project structure. Moved package out of src into root.
 
   This will help testing and running code under pipenv/pipfile
   which has problems installing package placed in subdirectory,
-  while having package definition on the same place as pipfile. (`#314 <https://https://github.com/fizyk/pytest_pyramid/issues/314>`_)
-- Migrate project configuration from setup.cfg to pyproject.toml, dropped setup.py (`#315 <https://https://github.com/fizyk/pytest_pyramid/issues/315>`_)
+  while having package definition on the same place as pipfile. (`#314 <https://github.com/fizyk/pytest_pyramid/issues/314>`_)
+- Migrate project configuration from setup.cfg to pyproject.toml, dropped setup.py (`#315 <https://github.com/fizyk/pytest_pyramid/issues/315>`_)
 
 
 1.0.1
