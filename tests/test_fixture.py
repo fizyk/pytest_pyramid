@@ -80,7 +80,7 @@ def test_pyramid_inheritance_config(
     assert pyramid_config_inheritance.registry.settings["one_value"] == "1"
 
 
-@pytest.fixture()
+@pytest.fixture
 def dummy_fixture() -> None:
     """Return a dummy fixture that does nothing."""
 
