@@ -133,11 +133,33 @@ directory = "newsfragments"
 filename = "CHANGES.rst"
 issue_format = "`#{issue} <https://github.com/fizyk/pytest_pyramid/issues/{issue}>`_"
 single_file = true
-type = [
-    { directory = "break", name = "Breaking changes", showcontent = true },
-    { directory = "depr", name = "Deprecations", showcontent = true },
-    { directory = "feature", name = "Features", showcontent = true },
-    { directory = "bugfix", name = "Bugfixes", showcontent = true },
-    { directory = "docs", name = "Documentation", showcontent = true },
-    { directory = "misc", name = "Miscellaneous", showcontent = true },
-]
+
+[[tool.towncrier.type]]
+directory = "break"
+name = "Breaking changes"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "depr"
+name = "Deprecations"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "feature"
+name = "Features"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "bugfix"
+name = "Bugfixes"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "docs"
+name = "Documentation"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "misc"
+name = "Miscellaneous"
+showcontent = true
