@@ -1,0 +1,1 @@
+Improve test coverage by running tests through coverage module, not coverage as part of tests.
