@@ -3,6 +3,26 @@ CHANGES
 
 .. towncrier release notes start
 
+pytest-pyramid 1.1.1 (2026-09-05)
+=================================
+
+Miscellaneous
+-------------
+
+- Update pytest configuration to toml-native (`#632 <https://github.com/fizyk/pytest_pyramid/issues/632>`_)
+- Add zizmor to pre-commit and address its findings. (`#731 <https://github.com/fizyk/pytest_pyramid/issues/731>`_)
+- Add pyproject-fmt formatter to the pre-commit config. (`#732 <https://github.com/fizyk/pytest_pyramid/issues/732>`_)
+- Migrate development environment to uv (`#733 <https://github.com/fizyk/pytest_pyramid/issues/733>`_)
+- Add Python 3.15 to CI (`#734 <https://github.com/fizyk/pytest_pyramid/issues/734>`_)
+- Enable `flake8-boolean-trap` linter (`#735 <https://github.com/fizyk/pytest_pyramid/issues/735>`_)
+- Enable `tryceratops` linter (`#738 <https://github.com/fizyk/pytest_pyramid/issues/738>`_)
+- Add release-schedule workflow. (`#739 <https://github.com/fizyk/pytest_pyramid/issues/739>`_)
+- Enable `flake8-pytest-style` linter (`#740 <https://github.com/fizyk/pytest_pyramid/issues/740>`_)
+- Migrated the Automerge workflow to `fizyk/actions-reuse` version 5.4.1. (`#744 <https://github.com/fizyk/pytest_pyramid/issues/744>`_)
+- Configure Dependabot to update pre-commit dependencies. (`#748 <https://github.com/fizyk/pytest_pyramid/issues/748>`_)
+- Improve test coverage by running tests through coverage module, not coverage as part of tests. (`#753 <https://github.com/fizyk/pytest_pyramid/issues/753>`_)
+
+
 pytest_pyramid 1.1.0 (2025-09-30)
 =================================
 

@@ -1,1 +1,0 @@
-Enable `flake8-pytest-style` linter
