@@ -51,7 +51,7 @@ pytest11.pytest_pyramid = "pytest_pyramid.plugin"
 
 [dependency-groups]
 dev = [
-    "coverage==7.15.4",
+    "coverage==7.16.0",
     "mypy==2.3.1",
     "pyramid==2.1.0",
     "pytest==9.1.1",
