@@ -77,10 +77,10 @@ select = [
     "D",   # pydocstyle
     "E",   # pycodestyle
     "F",   # pyflakes
-    "I",   # isort
     "FBT", # flake8-boolean-trap
-    "TRY", # tryceratops
+    "I",   # isort
     "PT",  # flake8-pytest-style
+    "TRY", # tryceratops
 ]
 
 [tool.pyproject-fmt]
