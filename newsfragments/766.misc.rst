@@ -1,0 +1,1 @@
+Turn off pre-commits pr autofix and changed the update schedule to quarterly

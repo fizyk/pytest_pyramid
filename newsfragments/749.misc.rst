@@ -1,0 +1,1 @@
+Add pyproject-validator to pre-commit hooks
