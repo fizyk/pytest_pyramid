@@ -1,17 +1,17 @@
-# Copyright (c) 2013 by pytest_pyramid authors and contributors
+# Copyright (c) 2013-2026 by pytest_pyramid authors and contributors
 #
 # This module is part of pytest_pyramid and is released under
 # the MIT License (MIT): http://opensource.org/licenses/MIT
 """Plugin's definition and basic fixtures."""
 
-from _pytest.config.argparsing import Parser
+import pytest
 
 from pytest_pyramid import factories
 
 _help_config = "Path to default config ini for tests"
 
 
-def pytest_addoption(parser: Parser) -> None:
+def pytest_addoption(parser: pytest.Parser) -> None:
     """Pytest option configurator."""
     parser.addini(
         name="pyramid_config",

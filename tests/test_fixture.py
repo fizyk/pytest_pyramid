@@ -1,7 +1,6 @@
 """Testing fixtures."""
 
 import pytest
-from _pytest.fixtures import FixtureRequest
 from pyramid.config import Configurator
 from webtest import TestApp
 
@@ -89,7 +88,7 @@ pyramid_app_with_additional_fixtures = factories.pyramid_app("pyramid_config_pat
 
 
 def test_pyramid_app_with_additional_fixtures(
-    pyramid_app_with_additional_fixtures: TestApp, request: FixtureRequest
+    pyramid_app_with_additional_fixtures: TestApp, request: pytest.FixtureRequest
 ) -> None:
     """Test that pyramid_app factory works with additional_fixtures.
 
