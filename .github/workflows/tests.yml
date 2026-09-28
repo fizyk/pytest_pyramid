@@ -17,3 +17,10 @@ jobs:
       coverage-run-mode: true
     secrets:
       codecov_token: ${{ secrets.CODECOV_TOKEN }}
+
+  oldest:
+    permissions:
+      contents: read
+    uses: $/.github/workflows/tests-oldest.yml
+    secrets:
+      codecov_token: ${{ secrets.CODECOV_TOKEN }}

@@ -2,6 +2,8 @@ version: 2
 updates:
 - package-ecosystem: uv
   directory: "/"
+  exclude-paths:
+    - "oldest/*"
   schedule:
     interval: daily
     time: "04:13"

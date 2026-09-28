@@ -1,0 +1,1 @@
+Require pytest>=7, pyramid>=2.1 and webtest>=3. Pyramid 2.0 no longer works with current setuptools, which removed ``pkg_resources``.

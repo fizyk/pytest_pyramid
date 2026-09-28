@@ -685,9 +685,9 @@ release = [
 
 [package.metadata]
 requires-dist = [
-    { name = "pyramid" },
-    { name = "pytest" },
-    { name = "webtest" },
+    { name = "pyramid", specifier = ">=2.1" },
+    { name = "pytest", specifier = ">=7" },
+    { name = "webtest", specifier = ">=3" },
 ]
 
 [package.metadata.requires-dev]

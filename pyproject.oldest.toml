@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+pyramid_config = "tests/pyramid.test.ini"
+xfail_strict = true
+testpaths = "tests"

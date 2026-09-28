@@ -1,0 +1,66 @@
+name: Run tests with oldest dependencies
+
+on:
+  workflow_call:
+    inputs:
+      python-versions:
+        description: 'Python versions compatible with the oldest supported dependencies'
+        default: '["3.11"]'
+        required: false
+        type: string
+      os:
+        description: 'Operating system to run tests on'
+        default: 'ubuntu-latest'
+        required: false
+        type: string
+    secrets:
+      codecov_token:
+        description: 'Codecov token'
+        required: false
+
+permissions: {}
+
+jobs:
+  tests:
+    runs-on: ${{ inputs.os }}
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ${{ fromJSON(inputs.python-versions) }}
+    env:
+      OS: ${{ inputs.os }}
+      PYTHON: ${{ matrix.python-version }}
+      UV_NO_SYNC: "1"
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        persist-credentials: false
+    - name: Set up uv on python ${{ matrix.python-version }}
+      uses: fizyk/actions-reuse/.github/actions/uv-setup@ef34949dba56816730c78752529724b4aa96e557 # v5.8.0
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: false
+    - name: Install oldest supported versions
+      uses: fizyk/actions-reuse/.github/actions/uv-pip@ef34949dba56816730c78752529724b4aa96e557 # v5.8.0
+      with:
+        requirements: oldest/requirements.txt
+    - name: Load the plugin
+      uses: fizyk/actions-reuse/.github/actions/uv-run@ef34949dba56816730c78752529724b4aa96e557 # v5.8.0
+      with:
+        command: python -c "import pytest_pyramid.plugin"
+    - name: Run tests
+      uses: fizyk/actions-reuse/.github/actions/uv-pytest-coverage@ef34949dba56816730c78752529724b4aa96e557 # v5.8.0
+      with:
+        pytest-opts: -c pyproject.oldest.toml
+        data-file: .coverage.oldest
+        output-file: coverage-oldest.xml
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+      with:
+        token: ${{ secrets.codecov_token }}
+        flags: linux
+        env_vars: OS,PYTHON
+        files: ./coverage-oldest.xml
+        fail_ci_if_error: false
