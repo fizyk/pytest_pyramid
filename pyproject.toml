@@ -32,9 +32,9 @@ classifiers = [
     "Topic :: Software Development :: Testing :: Unit",
 ]
 dependencies = [
-    "pyramid",
-    "pytest",
-    "webtest",
+    "pyramid>=2.1",
+    "pytest>=7",
+    "webtest>=3",
 ]
 
 [[project.authors]]
