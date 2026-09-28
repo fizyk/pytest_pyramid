@@ -5,11 +5,11 @@
 """Pytest's fixture factories."""
 
 import os
+from collections.abc import Callable
 from configparser import ConfigParser
-from typing import Any, Callable
+from typing import Any
 
 import pytest
-from _pytest.fixtures import FixtureRequest
 from pyramid.config import Configurator
 from webtest import TestApp
 
@@ -31,7 +31,7 @@ def _load_settings(cpath: str, io_settings: dict[str, Any]) -> None:
 
 def pyramid_config(
     config_path: str = None, settings: dict[str, Any] = None
-) -> Callable[[FixtureRequest], Configurator]:
+) -> Callable[[pytest.FixtureRequest], Configurator]:
     """Pyramid_config fixture factory.
 
     Used to create aditional fixtures returning pyramid's
@@ -44,7 +44,7 @@ def pyramid_config(
     """
 
     @pytest.fixture(scope="session")
-    def pyramid_config(request: FixtureRequest) -> Configurator:
+    def pyramid_config(request: pytest.FixtureRequest) -> Configurator:
         # load the application settings
         app_settings: dict[str, Any] = {}
         if (
@@ -62,7 +62,7 @@ def pyramid_config(
 
 def pyramid_app(
     config_fixture_name: str, *additional_fixtures: str
-) -> Callable[[FixtureRequest], TestApp]:
+) -> Callable[[pytest.FixtureRequest], TestApp]:
     """pyramid_app fixture factory.
 
     Creates a TestApp instance based on.
@@ -79,7 +79,7 @@ def pyramid_app(
     """
 
     @pytest.fixture
-    def pyramid_app(request: FixtureRequest) -> TestApp:
+    def pyramid_app(request: pytest.FixtureRequest) -> TestApp:
         for additional_fixture in additional_fixtures:
             request.getfixturevalue(additional_fixture)
         config = request.getfixturevalue(config_fixture_name)
