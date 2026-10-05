@@ -1,1 +1,0 @@
-Run the test suite on Python 3.11 against the oldest supported dependency versions, pinned in ``oldest/requirements.txt``.

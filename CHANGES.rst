@@ -3,6 +3,33 @@ CHANGES
 
 .. towncrier release notes start
 
+pytest-pyramid 2.0.0 (2026-10-05)
+=================================
+
+Breaking changes
+----------------
+
+- Drop support for Python 3.10 (`#769 <https://github.com/fizyk/pytest_pyramid/issues/769>`_)
+- Require pytest>=7, pyramid>=2.1 and webtest>=3. Pyramid 2.0 no longer works with current setuptools, which removed ``pkg_resources``. (`#786 <https://github.com/fizyk/pytest_pyramid/issues/786>`_)
+
+
+Features
+--------
+
+- Add support for Python 3.15 (`#769 <https://github.com/fizyk/pytest_pyramid/issues/769>`_)
+
+
+Miscellaneous
+-------------
+
+- Add actionlint to pre-commit hooks (`#745 <https://github.com/fizyk/pytest_pyramid/issues/745>`_)
+- Add pyproject-validator to pre-commit hooks (`#749 <https://github.com/fizyk/pytest_pyramid/issues/749>`_)
+- Turn off pre-commits pr autofix and changed the update schedule to quarterly (`#766 <https://github.com/fizyk/pytest_pyramid/issues/766>`_)
+- Enable Ruff’s UP and PYI rulesets, and update affected code to comply. (`#773 <https://github.com/fizyk/pytest_pyramid/issues/773>`_)
+- Update zizmor to 1.30.0 and adjust workflows (`#774 <https://github.com/fizyk/pytest_pyramid/issues/774>`_)
+- Run the test suite on Python 3.11 against the oldest supported dependency versions, pinned in ``oldest/requirements.txt``. (`#786 <https://github.com/fizyk/pytest_pyramid/issues/786>`_)
+
+
 pytest-pyramid 1.1.1 (2026-09-05)
 =================================
 

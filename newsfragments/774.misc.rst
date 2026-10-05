@@ -1,1 +1,0 @@
-Update zizmor to 1.30.0 and adjust workflows
