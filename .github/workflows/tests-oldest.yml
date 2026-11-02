@@ -38,20 +38,20 @@ jobs:
       with:
         persist-credentials: false
     - name: Set up uv on python ${{ matrix.python-version }}
-      uses: fizyk/actions-reuse/.github/actions/uv-setup@fda7c6236777ced9c8947ab7243959ee6aa185e9 # v5.10.3
+      uses: fizyk/actions-reuse/.github/actions/uv-setup@723826f1995ca7fd088e1ca408592f275fd7aeee # v5.11.0
       with:
         python-version: ${{ matrix.python-version }}
         cache: false
     - name: Install oldest supported versions
-      uses: fizyk/actions-reuse/.github/actions/uv-pip@fda7c6236777ced9c8947ab7243959ee6aa185e9 # v5.10.3
+      uses: fizyk/actions-reuse/.github/actions/uv-pip@723826f1995ca7fd088e1ca408592f275fd7aeee # v5.11.0
       with:
         requirements: oldest/requirements.txt
     - name: Load the plugin
-      uses: fizyk/actions-reuse/.github/actions/uv-run@fda7c6236777ced9c8947ab7243959ee6aa185e9 # v5.10.3
+      uses: fizyk/actions-reuse/.github/actions/uv-run@723826f1995ca7fd088e1ca408592f275fd7aeee # v5.11.0
       with:
         command: python -c "import pytest_pyramid.plugin"
     - name: Run tests
-      uses: fizyk/actions-reuse/.github/actions/uv-pytest-coverage@fda7c6236777ced9c8947ab7243959ee6aa185e9 # v5.10.3
+      uses: fizyk/actions-reuse/.github/actions/uv-pytest-coverage@723826f1995ca7fd088e1ca408592f275fd7aeee # v5.11.0
       with:
         pytest-opts: -c pyproject.oldest.toml
         data-file: .coverage.oldest
